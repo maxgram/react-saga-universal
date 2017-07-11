@@ -1,0 +1,16 @@
+.row{
+  padding: 20px;
+  border: 1px solid green;
+}
+.column{
+  color: white;
+  padding: 10px;
+}
+.columnLeft{
+  composes: column;
+  background-color: red;
+}
+.columnRight{
+  composes: column;
+  background-color: blue;
+}

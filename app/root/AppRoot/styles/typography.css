@@ -1,0 +1,13 @@
+*{
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-weight: lighter;
+  font-size: 15px;
+  line-height: 1;
+
+  /* To avoid having lighter fonts on safari*/
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+p{
+  line-height: 1.5;
+}

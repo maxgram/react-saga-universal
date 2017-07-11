@@ -1,0 +1,31 @@
+@value PRIMARY_COLOR: #ccc;
+@value SECONDARY_COLOR: #ccc;
+@value HEADER_HEIGHT: 60px;
+
+.mainHeader{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: HEADER_HEIGHT;
+  background-color: PRIMARY_COLOR;
+  padding: 0 15px;
+
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+
+  li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  a{
+    height: HEADER_HEIGHT;
+    color: white;
+    text-decoration: none;
+    line-height: HEADER_HEIGHT;
+  }
+}

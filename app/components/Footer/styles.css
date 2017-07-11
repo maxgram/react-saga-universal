@@ -1,0 +1,11 @@
+@value PRIMARY_COLOR: #ccc;
+@value SECONDARY_COLOR: #ccc;
+@value FOOTER_HEIGHT: 60px;
+
+.mainFooter{
+  width: 100%;
+  background-color: SECONDARY_COLOR;
+  color: white;
+  padding: 20px 15px;
+}
+

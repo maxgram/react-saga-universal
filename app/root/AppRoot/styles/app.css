@@ -1,0 +1,19 @@
+:global {
+  @import './normalize.css';
+  @import './typography.css';
+
+  *{
+    box-sizing: border-box;
+    outline: none;
+    touch-action: manipulation;
+  }
+
+  html,body{
+    background-color: #fefefe;
+    position: relative;
+  }
+
+  main{
+    padding: 60px 0;
+  }
+}
