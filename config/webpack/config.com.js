@@ -34,6 +34,9 @@ const common = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: function (module) {
+        if(module.resource && (/^.*\.(css)$/).test(module.resource)) {
+          return false
+        }
         // modules under node_modules are bundled into vendor.js
         return module.context && module.context.indexOf('node_modules') !== -1;
       }
