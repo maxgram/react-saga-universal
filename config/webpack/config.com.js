@@ -14,6 +14,15 @@ const common = {
     chunkFilename: '[name].chunk.js',
   },
 
+  // resolve: { //breaks on prod
+  //   extensions: ['.js', '.json', '.css'],
+  //   alias: {
+  //     'components': path.resolve(CWD, './app/components/'),
+  //     'containers': path.resolve(CWD, './app/containers/'),
+  //     // 'pages': path.resolve(CWD, './app/containers/pages/'),
+  //   }
+  // },
+
   module: {
     loaders: [
       {
