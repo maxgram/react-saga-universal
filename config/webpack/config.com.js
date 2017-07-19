@@ -5,6 +5,7 @@ const merge = require('webpack-merge')
 
 const development = require('./config.dev.js')
 const production = require('./config.prod.js')
+const aliases = require('../aliases').resolve.alias
 
 const common = {
   output: {
@@ -14,14 +15,10 @@ const common = {
     chunkFilename: '[name].chunk.js',
   },
 
-  // resolve: { //breaks on prod
-  //   extensions: ['.js', '.json', '.css'],
-  //   alias: {
-  //     'components': path.resolve(CWD, './app/components/'),
-  //     'containers': path.resolve(CWD, './app/containers/'),
-  //     // 'pages': path.resolve(CWD, './app/containers/pages/'),
-  //   }
-  // },
+  resolve: {
+    extensions: ['.js', '.json', '.css'],
+    alias: aliases
+  },
 
   module: {
     loaders: [

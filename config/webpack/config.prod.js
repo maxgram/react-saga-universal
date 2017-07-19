@@ -10,8 +10,6 @@ module.exports = {
     loaders: [
       {
         test: /\.css$/,
-        // exclude: path.resolve(CWD, './node_modules/react-flexbox-grid'),
-        // include: /node_modules/,
         exclude: /react-flexbox-grid/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -20,7 +18,7 @@ module.exports = {
               loader: 'css-loader',
               query: {
                 modules: true,
-                // minimize: true,
+                minimize: true,
                 localIdentName: '[hash:base64:5]'
               }
             },

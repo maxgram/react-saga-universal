@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import { Home, About, Blog, Contact, NotFound } from './containers/pages'
+import { Home, About, Blog, Contact, NotFound } from 'Pages'
 
 const Routes = (props) => {
   return (

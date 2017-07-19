@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 
+import Spinner from 'Components/Spinner'
+
 import css from './styles.css'
 
 class Home extends Component {
@@ -17,6 +19,7 @@ class Home extends Component {
             <Row center="xs">
               <Col xs={12} className={css.row}>
                 Home Page
+                <Spinner />
               </Col>
             </Row>
 
