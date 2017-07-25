@@ -6,7 +6,7 @@ const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
 
 module.exports = {
   devtool: false,
-  entry: path.resolve(CWD, './app/index'),
+  entry: path.resolve(CWD, './src/index'),
   module: {
     loaders: [
       {

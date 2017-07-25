@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     main: [
       'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
-      path.resolve(CWD, './app/root/root.dev.js')
+      path.resolve(CWD, './src/root/root.dev.js')
     ],
   },
 

@@ -5,7 +5,7 @@ import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
-import { renderDom } from '../../app/root/html'
+import { renderDom } from '../../src/root/html'
 
 const DEV_HOST = process.env.DEV_HOST
 const DEV_PORT = process.env.DEV_PORT
