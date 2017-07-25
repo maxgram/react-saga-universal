@@ -2,6 +2,7 @@ const CWD = process.cwd()
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
 
 module.exports = {
   devtool: false,
@@ -35,6 +36,13 @@ module.exports = {
           ]
         })
       },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'url?limit=10000&mimetype=image/svg+xml',
+        }],
+      },
       //
     ]
   },
@@ -47,5 +55,20 @@ module.exports = {
         drop_console: true,
       }
     }),
+
+    new SVGSpritemapPlugin({
+      src: path.resolve(CWD, './static/svg/**/*.svg'),
+      prefix: 'sprite-',
+      svgo: {
+        plugins: [{
+          removeTitle:true,
+          removeViewBox:false,
+          removeUnusedNS: true,
+          cleanupIDs: true
+        }]
+      },
+      filename: '/static/svgsprite.svg'
+    })
+    //
   ]
 }
