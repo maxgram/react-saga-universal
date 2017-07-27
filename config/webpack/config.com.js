@@ -2,6 +2,7 @@ const CWD = process.cwd()
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
 
 const development = require('./config.dev.js')
 const production = require('./config.prod.js')
@@ -48,6 +49,20 @@ const common = {
         return module.context && module.context.indexOf('node_modules') !== -1
       }
     }),
+
+    new SVGSpritemapPlugin({
+      src: path.resolve(CWD, './static/svg/**/*.svg'),
+      prefix: 'sprite-',
+      svgo: {
+        plugins: [{
+          removeTitle:true,
+          removeViewBox:false,
+          removeUnusedNS: true,
+          cleanupIDs: true
+        }]
+      },
+      filename: 'svgsprite.svg'
+    })
   ],
 }
 
