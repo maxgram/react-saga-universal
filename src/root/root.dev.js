@@ -34,13 +34,20 @@ const renderApp = () => {
 
 // Enable hot reload by react-hot-loader
 if (module.hot) {
-  module.hot.accept('./AppRoot', () => {
-    setImmediate(() => {
-      // Preventing the hot reloading error from react-router
-      unmountComponentAtNode(domRoot)
-      renderApp()
-    })
+  module.hot.accept()
+  setImmediate(() => {
+    // Preventing the hot reloading error from react-router
+    unmountComponentAtNode(domRoot)
+    renderApp()
   })
+
+  // module.hot.accept('./AppRoot', () => {
+  //   setImmediate(() => {
+  //     // Preventing the hot reloading error from react-router
+  //     unmountComponentAtNode(domRoot)
+  //     renderApp()
+  //   })
+  // })
 }
 
 renderApp()
