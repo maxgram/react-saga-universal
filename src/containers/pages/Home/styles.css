@@ -1,6 +1,10 @@
+@value colors: "../../../root/AppRoot/styles/var/colors.css";
+/* @value colors: "CSSVar/colors.css"; */
+@value PRIMARY, SECONDARY, CUSTOM from colors;
+
 .row{
   padding: 20px;
-  border: 1px solid green;
+  border: 1px solid CUSTOM;
 }
 .column{
   color: white;
@@ -8,9 +12,9 @@
 }
 .columnLeft{
   composes: column;
-  background-color: red;
+  background-color: PRIMARY;
 }
 .columnRight{
   composes: column;
-  background-color: blue;
+  background-color: SECONDARY;
 }
