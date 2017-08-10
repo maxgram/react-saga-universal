@@ -1,6 +1,6 @@
 import Express from 'express'
 import path from 'path'
-import serverRenderer from '../../src/root/serverRenderer'
+import serverRenderer from '../../src/server.prod'
 
 const PROD_PORT = process.env.PROD_PORT
 const CWD = process.cwd()

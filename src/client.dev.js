@@ -6,15 +6,14 @@ import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader'
 import { ConnectedRouter } from 'react-router-redux'
 
-import AppRoot from './AppRoot'
+import AppRoot from './root'
 // import DevTools from '../containers/devtools' //<- TODO
 
-import configureStore from '../redux/store'
-import rootSaga from '../redux/rootSaga'
+import configureStore from 'Redux/store/configureStoreDev'
+import rootSaga from 'Redux/rootSaga'
 
-const preloadedState = window.__INITIAL_STATE__
 const history = createHistory()
-const store = configureStore(history, preloadedState)
+const store = configureStore(history, {})
       store.runSaga(rootSaga)
 const domRoot = document.getElementById('root')
 

@@ -1,4 +1,4 @@
-@value colors: "../../../root/AppRoot/styles/var/colors.css";
+@value colors: "../../../root/styles/var/colors.css";
 /* @value colors: "CSSVar/colors.css"; */
 @value PRIMARY, SECONDARY, CUSTOM from colors;
 

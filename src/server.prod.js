@@ -5,12 +5,12 @@ import createHistory from 'history/createMemoryHistory'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import configureStore from '../redux/store'
-import rootSaga from '../redux/rootSaga'
+import configureStore from 'Redux/store/configureStoreProd'
+import rootSaga from 'Redux/rootSaga'
 
-import AppRoot from './AppRoot'
-import { renderDom } from './html'
-const DEV_PORT = process.env.DEV_PORT
+import AppRoot from './root'
+import { renderDom } from './root/html'
+
 const PROD_PORT = process.env.PROD_PORT
 
 const serverRenderer = (req, res) => {
@@ -35,7 +35,7 @@ const serverRenderer = (req, res) => {
 
 
   store.runSaga(rootSaga).done.then(() => {
-    console.log()
+    // console.log()
     // console.log('[:: SAGAS COMPLETE ::]')
     // console.log( JSON.stringify(store.getState()) )
     // console.log('::::::::::||::::::::::')
