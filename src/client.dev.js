@@ -7,7 +7,7 @@ import { AppContainer } from 'react-hot-loader'
 import { ConnectedRouter } from 'react-router-redux'
 
 import AppRoot from './root'
-// import DevTools from '../containers/devtools' //<- TODO
+import DevTools from 'Containers/devtools'
 
 import configureStore from 'Redux/store/configureStoreDev'
 import rootSaga from 'Redux/rootSaga'
@@ -21,9 +21,12 @@ const renderApp = () => {
   render(
     <AppContainer>
       <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <AppRoot />
-        </ConnectedRouter>
+        <div>
+          <ConnectedRouter history={history}>
+            <AppRoot />
+          </ConnectedRouter>
+          <DevTools />
+        </div>
       </Provider>
     </AppContainer>,
     domRoot
