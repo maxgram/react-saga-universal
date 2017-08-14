@@ -3,13 +3,14 @@
 @value HEADER_HEIGHT: 60px;
 
 .mainHeader{
-  position: absolute;
+  position: fixed;
   top:0;
   left: 0;
   width: 100%;
   height: HEADER_HEIGHT;
   background-color: PRIMARY_COLOR;
   padding: 0 15px;
+  z-index: 99999;
 
   ul{
     margin: 0;

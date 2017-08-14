@@ -1,0 +1,20 @@
+.section{
+  background-color: #f4f4f4;
+  padding: 2rem 0;
+}
+
+.row{}
+.col{}
+
+.image{
+  border: none;
+}
+
+.imageL{
+  composes: image;
+  float: left;
+}
+.imageR{
+  composes: image;
+  float: right;
+}

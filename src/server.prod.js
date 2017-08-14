@@ -20,7 +20,7 @@ const serverRenderer = (req, res) => {
   const host = req.get('host').replace(/\:.*/, '')
   const history = createHistory()
 
-  const head = Helmet.rewind();
+  const head = Helmet.rewind()
         head.url = `https://${host}${urlPath}`
 
   const store = configureStore(history, {})

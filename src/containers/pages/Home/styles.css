@@ -18,3 +18,13 @@
   composes: column;
   background-color: SECONDARY;
 }
+
+
+.sectionOne{
+  background-color: PRIMARY;
+  padding: 5rem 0 0;
+}
+.sectionTwo{
+  background-color: CUSTOM;
+  padding: 5rem 0 0;
+}

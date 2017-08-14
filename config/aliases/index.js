@@ -9,6 +9,7 @@ module.exports = {
       'Components': path.resolve(CWD, './src/components/'),
       'Containers': path.resolve(CWD, './src/containers/'),
       'Pages': path.resolve(CWD, './src/containers/pages/'),
+      'Layout': path.resolve(CWD, './src/containers/layout/'),
     }
   }
 }
