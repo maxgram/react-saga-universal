@@ -1,5 +1,5 @@
-@value PRIMARY_COLOR: #ccc;
-@value SECONDARY_COLOR: #ccc;
+/* @value colors: "../../root/styles/var/colors.css";
+@value BLUE, BEIGE, RED, YELLOW, GREEN, DARK_GREY from colors; */
 @value HEADER_HEIGHT: 60px;
 
 .mainHeader{
@@ -8,7 +8,7 @@
   left: 0;
   width: 100%;
   height: HEADER_HEIGHT;
-  background-color: PRIMARY_COLOR;
+  background-color: white;
   padding: 0 15px;
   z-index: 99999;
 
@@ -25,7 +25,7 @@
 
   a{
     height: HEADER_HEIGHT;
-    color: white;
+    color: black;
     text-decoration: none;
     line-height: HEADER_HEIGHT;
   }

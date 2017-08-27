@@ -1,11 +1,10 @@
-@value PRIMARY_COLOR: #ccc;
-@value SECONDARY_COLOR: #ccc;
-@value FOOTER_HEIGHT: 60px;
+@value colors: "../../root/styles/var/colors.css";
+@value RED, DARK_GREY from colors;
 
 .mainFooter{
   width: 100%;
-  background-color: SECONDARY_COLOR;
+  background-color: DARK_GREY;
   color: white;
-  padding: 20px 15px;
+  padding: 2rem 15px;
 }
 

@@ -1,7 +1,21 @@
+@value breakpoints: "../../../root/styles/var/breakpoints.css";
+@value XS, SM, MD, LG from breakpoints;
+
 .hero{
   position: relative;
   height: 65vh;
-  background-color: #fefefe;
+  background-color: #FEFEFE;
+
+  h1{
+    color: white;
+    font-weight: bolder;
+    white-space: nowrap;
+  }
+  p{
+    color: white;
+    font-weight: lighter;
+    margin: 0 auto;
+  }
 }
 
 .inner{
@@ -11,3 +25,46 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+
+/*** MEDIA QUERIES ***/
+@media only screen and (min-width: XS) {
+  .hero{
+    h1{
+      font-size: 1.9rem;
+      margin-bottom: 1.5rem;
+    }
+    p{
+      width: 80vw;
+      font-size: 1.0rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+}
+@media only screen and (min-width: SM) {
+  .hero{
+    h1{
+      font-size: 2.5rem;
+      margin-bottom: 1.0rem;
+    }
+    p{
+      width: 70vw;
+      font-size: 1.1rem;
+      letter-spacing: 0.2rem;
+    }
+  }
+}
+@media only screen and (min-width: MD) {
+  .hero{
+    h1{
+      font-size: 3rem;
+      margin-bottom: 0.25rem;
+    }
+    p{
+      width: 60vw;
+      font-size: 1.3rem;
+      letter-spacing: 0.3rem;
+    }
+  }
+}
+@media only screen and (min-width: LG) {}

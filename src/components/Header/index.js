@@ -20,7 +20,7 @@ const Header = (props) => {
           <Link to="/blog">Blog</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/github">Github</Link>
         </li>
       </ul>
     </header>

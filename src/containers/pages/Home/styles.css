@@ -1,30 +1,128 @@
-@value colors: "../../../root/styles/var/colors.css";
+@value breakpoints: "../../../root/styles/var/breakpoints.css";
+@value XS, SM, MD, LG from breakpoints;
 /* @value colors: "CSSVar/colors.css"; */
-@value PRIMARY, SECONDARY, CUSTOM from colors;
+@value colors: "../../../root/styles/var/colors.css";
+@value BLUE, BEIGE, RED, YELLOW, GREEN, DARK_GREY from colors;
 
-.row{
-  padding: 20px;
-  border: 1px solid CUSTOM;
+
+.hero{
+  position: relative;
+  height: 85vh;
+  background-color: BLUE;
 }
-.column{
+
+.contentHolder{
+  margin-bottom: 5rem;
+
+  h2{
+    font-weight: bold;
+  }
+}
+
+.contentProps{
+  padding: 5rem 0;
+  img{ width: 100%; }
+}
+
+.noBottomProps{
+  padding: 5rem 0 0;
+  img{ width: 100%; }
+}
+
+.sectionImac{
+  composes: contentProps;
+
+  background-color: BEIGE;
+  color: RED;
+  h2:before{background-color: RED;}
+}
+
+.sectionMacPro{
+  composes: contentProps;
+
+  background-color: RED;
   color: white;
-  padding: 10px;
+  h2:before{background-color: white;}
 }
-.columnLeft{
-  composes: column;
-  background-color: PRIMARY;
+
+.sectionIpad{
+  composes: noBottomProps;
+
+  background-color: YELLOW;
+  color: DARK_GREY;
+  h2:before{background-color: DARK_GREY;}
+  img{ max-width: 640px; }
 }
-.columnRight{
-  composes: column;
-  background-color: SECONDARY;
+
+.sectionIphone{
+  composes: noBottomProps;
+
+  background-color: GREEN;
+  color: DARK_GREY;
+  h2:before{background-color: DARK_GREY;}
+  img{ max-width: 350px; }
 }
 
 
-.sectionOne{
-  background-color: PRIMARY;
-  padding: 5rem 0 0;
+
+
+/*** MEDIA QUERIES ***/
+@media only screen and (min-width: XS) {
+  .contentHolder{
+    h2{
+      position: relative;
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 3rem;
+
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 25vw;
+        height: 1px;
+        margin-top: 1.75rem;
+        transform: translate(-50%, -50%);
+      }
+    }
+    p{
+      font-size: 1.0rem;
+      text-align: center;
+    }
+  }
 }
-.sectionTwo{
-  background-color: CUSTOM;
-  padding: 5rem 0 0;
+@media only screen and (min-width: SM) {
+  .contentHolder{
+    h2{
+      margin-bottom: 1rem;
+      text-align: left;
+
+      &:before{
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        margin-top: 0;
+        margin-left: -1rem;
+        transform: none;
+      }
+    }
+    p{
+      text-align: left;
+    }
+  }
+
+  .contentProps{
+    padding: 15rem 0;
+  }
+
+  .noBottomProps{
+    padding: 15rem 0 0;
+  }
 }
+@media only screen and (min-width: MD) {}
+@media only screen and (min-width: LG) {}
+
+

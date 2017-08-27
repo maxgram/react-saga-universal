@@ -1,3 +1,6 @@
+@value breakpoints: "../../../root/styles/var/breakpoints.css";
+@value XS, SM, MD, LG from breakpoints;
+
 .section{
   position: relative;
 }
@@ -5,4 +8,40 @@
 .ugc{
   padding: 3rem 0;
   text-align: left;
+
+  h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+  }
+
+  li{ margin: 1rem 0; }
 }
+
+/*** MEDIA QUERIES ***/
+@media only screen and (min-width: XS) {
+  .ugc{
+    h1{ font-size: 1.25rem; }
+    h2{ font-size: 1.2rem; }
+    h3{ font-size: 1.15rem; }
+    h4{ font-size: 1.1rem; }
+    h5{ font-size: 1.05rem; }
+    h6{ font-size: 1.0rem; }
+    p, li, a{ font-size: 0.9rem; }
+
+    li{ margin: 0.5rem 0; }
+  }
+}
+@media only screen and (min-width: SM) {
+  .ugc{
+    h1{ font-size: 1.6rem; }
+    h2{ font-size: 1.5rem; }
+    h3{ font-size: 1.4rem; }
+    h4{ font-size: 1.3rem; }
+    h5{ font-size: 1.2rem; }
+    h6{ font-size: 1.1rem; }
+    p, li, a{ font-size: 1.0rem; }
+
+    li{ margin: 1rem 0; }
+  }
+}
+@media only screen and (min-width: MD) {}
+@media only screen and (min-width: LG) {}

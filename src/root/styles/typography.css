@@ -11,3 +11,6 @@
 p{
   line-height: 1.5;
 }
+p em, p a, p strong {
+  font-size: inherit;
+}

@@ -6,8 +6,10 @@ import css from './styles.css'
 
 
 const Hero = ({children, image, imgLeft=false, className}) => {
+  const styleClass = className ? (className + ' ' + css.hero) : css.hero
+
   return (
-    <section className={className ? className : css.hero}>
+    <section className={styleClass}>
       <div className={css.inner}>
         {children}
       </div>

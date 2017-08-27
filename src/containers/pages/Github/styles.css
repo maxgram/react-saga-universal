@@ -1,0 +1,17 @@
+@value colors: "../../../root/styles/var/colors.css";
+@value YELLOW, DARK_GREY from colors;
+
+.hero{
+  height: 70vh;
+  background-color: YELLOW;
+
+  h1{
+    color: DARK_GREY;
+  }
+  p{
+    color: DARK_GREY;
+  }
+}
+.heroIcon{
+  fill: DARK_GREY;
+}

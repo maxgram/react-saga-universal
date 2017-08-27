@@ -1,0 +1,60 @@
+@value colors: "../../root/styles/var/colors.css";
+@value RED, DARK_GREY from colors;
+@value breakpoints: "../../root/styles/var/breakpoints.css";
+@value XS, SM, MD, LG from breakpoints;
+
+.box{
+  background-color: RED;
+  margin-bottom: 1rem;
+
+  a{
+    color: white;
+  }
+}
+
+.image{
+  img{
+    width: 100%;
+  }
+}
+
+.content{
+  padding: 1rem;
+
+  h2{
+    margin: 0 0 0.1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+  }
+  p{
+    margin: 0;
+    font-weight: lighter;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+  }
+}
+
+
+
+/*** MEDIA QUERIES ***/
+@media only screen and (min-width: XS) {
+  .content{
+    h2{ font-size: 1.0rem; }
+    p{ font-size: 0.7rem; }
+  }
+}
+@media only screen and (min-width: SM) {
+  .content{
+    h2{ font-size: 1.1rem; }
+    p{ font-size: 0.8rem; }
+  }
+}
+@media only screen and (min-width: MD) {
+  .box a:hover{
+    color: DARK_GREY;
+  }
+}
+@media only screen and (min-width: LG) {}

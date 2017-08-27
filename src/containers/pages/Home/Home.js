@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Grid, Row, Col } from 'react-flexbox-grid'
+import Helmet from 'react-helmet'
 
-import Spinner from 'Components/Spinner'
+import SvgSprite from 'Components/SvgSprite'
 import { Hero, Section } from 'Layout'
 
 import css from './styles.css'
@@ -13,50 +13,62 @@ class Home extends Component {
   }
 
   render() {
-    const imgFPO = 'http://via.placeholder.com/350x150'
+    const iphoneFPO = 'static/images/fpo/iphone-fpo.png'
+    const ipadFPO = 'static/images/fpo/ipad-fpo.png'
+    const imacFPO = 'static/images/fpo/imac-fpo.png'
+    const macProFPO = 'static/images/fpo/macpro-fpo.png'
 
     return (
       <main>
-        <Hero>
+        <Helmet title="React Saga Universal" />
+
+        <Hero className={css.hero}>
+          <SvgSprite spriteName="#sprite-react" width={124} height={124} />
           <h1>React Saga Universal</h1>
-          <p>Example of full production setup with server side rendering</p>
+          <p>Full development and production setup with server side rendering support</p>
         </Hero>
 
         <Section
-          className={css.sectionOne}
-          image={imgFPO}
+          className={css.sectionImac}
+          image={imacFPO}
         >
-          <h2>Title</h2>
-          <p>lorem ipsum</p>
+          <div className={css.contentHolder}>
+            <h2>Latest of the best</h2>
+            <p>Made of the most recent and the best tech in React world.<br /><strong>Babel 6</strong>, <strong>Webpack 3</strong>, <strong>React 15</strong>, <strong>React-Router 4</strong>, <strong>CSS-Modules</strong> are the main gears of the project. <strong>Development</strong> and <strong>Production</strong> environments for easy daily routines.</p>
+          </div>
         </Section>
 
         <Section
-          className={css.sectionTwo}
-          image={imgFPO}
+          className={css.sectionMacPro}
+          image={macProFPO}
           imgLeft
         >
-          <h2>Title</h2>
-          <p>lorem ipsum</p>
+          <div className={css.contentHolder}>
+            <h2>SEO Friendly</h2>
+            <p>One of the most important parts of the web is to make sure your project is serchable through search engins. <strong>Server side rendering</strong> opens full potential to get the most of functionality and readability</p>
+          </div>
         </Section>
 
-        <Grid fluid>
-            <Row center="xs">
-              <Col xs={12} className={css.row}>
-                Home Page
-                <Spinner />
-              </Col>
-            </Row>
+        <Section
+          className={css.sectionIpad}
+          image={ipadFPO}
+        >
+          <div className={css.contentHolder}>
+            <h2>State management with ease</h2>
+            <p><strong>Redux</strong> and <strong>Redux-Saga</strong> give you flexible, scalable and fully controlled state management of your web apps.</p>
+          </div>
+        </Section>
 
-            <Row center="xs">
-              <Col xs={6} className={css.columnLeft}>
-                Col 1
-              </Col>
-              <Col xs={6} className={css.columnRight}>
-                Col 2
-              </Col>
-            </Row>
-
-          </Grid>
+        <Section
+          className={css.sectionIphone}
+          image={iphoneFPO}
+          imgLeft
+        >
+          <div className={css.contentHolder}>
+            <h2>Cross-browser and Mobile friendly out of the box</h2>
+            <p><strong>Autoprefixer</strong> and <strong>React-flexbox-grid</strong> make it extremely easy to focus on building your product and forget about bugfixing how it looks in different browsers.</p>
+          </div>
+        </Section>
       </main>
     )
   }

@@ -10,14 +10,27 @@ const Section = ({children, image, imgLeft=false, className}) => {
     <section className={className ? className : css.section}>
       <Grid fluid>
         {
-          <Row middle="xs" className={css.row}>
-            <Col xs={12} sm={6} className={css.col}>
-              { imgLeft ? <img src={image} className={css.imageL} /> : children }
-            </Col>
-            <Col xs={12} sm={6} className={css.col}>
-              { imgLeft ? children : <img src={image} className={css.imageR} /> }
-            </Col>
-          </Row>
+          !imgLeft
+          ? <Row middle="xs" className={css.row}>
+              <Col xs={12} smOffset={1} sm={4} className={css.mobFirst}>
+                { children }
+              </Col>
+              <Col xs={12} smOffset={1} sm={5} className={css.col}>
+                <div className={css.imageHolder}>
+                  <img src={image} className={css.imageR} />
+                </div>
+              </Col>
+            </Row>
+          : <Row middle="xs" className={css.row}>
+              <Col xs={12} smOffset={1} sm={5} className={css.col}>
+                <div className={css.imageHolder}>
+                  <img src={image} className={css.imageL} />
+                </div>
+              </Col>
+              <Col xs={12} smOffset={1} sm={4} className={css.mobFirst}>
+                { children }
+              </Col>
+            </Row>
         }
       </Grid>
     </section>

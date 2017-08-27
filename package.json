@@ -63,6 +63,7 @@
     "webpack": "^3.2.0",
     "webpack-dev-middleware": "^1.11.0",
     "webpack-hot-middleware": "^2.18.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "yeast": "^0.1.2"
   }
 }

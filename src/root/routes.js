@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import { Home, About, Blog, Contact, NotFound } from 'Pages'
+import { Home, About, Blog, Github, NotFound } from 'Pages'
 
 const Routes = (props) => {
   return (
@@ -9,7 +9,7 @@ const Routes = (props) => {
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/blog" component={Blog} />
-      <Route path="/contact" component={Contact} />
+      <Route path="/github" component={Github} />
       <Route component={NotFound} />
 
       {/*<Route path="/blog/:id" component={BlogItem} />*/}

@@ -7,7 +7,7 @@ const Footer = (props) => {
   return (
     <footer className={css.mainFooter}>
       <div>
-        FOOTER
+        Fork me on <a href="https://github.com/max-gram/react-saga-universal">Github</a>
       </div>
     </footer>
   )

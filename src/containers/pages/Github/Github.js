@@ -2,25 +2,27 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
+import SvgSprite from 'Components/SvgSprite'
 import { Hero, Ugc } from 'Layout'
 
 import css from './styles.css'
 
-class About extends Component {
+class Github extends Component {
   constructor(props) {
     super(props)
   }
 
   render() {
-    const {ugc} = this.props
+    const { ugc } = this.props
 
     return (
       <main>
-        <Helmet title="About" />
+        <Helmet title="Github" />
 
         <Hero className={css.hero}>
-          <h1>About page</h1>
-          <p>User generated content example</p>
+          <SvgSprite spriteName="#sprite-github" className={css.heroIcon} width={52} height={52} />
+          <h1>Fork me on Github</h1>
+          <p>Create an issue or pull request</p>
         </Hero>
 
         <Ugc data={ugc} />
@@ -29,11 +31,11 @@ class About extends Component {
   }
 }
 
-About.PropTypes = {
+Github.PropTypes = {
   loadPageData: PropTypes.func.isRequired,
   ugc: PropTypes.shape({
     _html: PropTypes.string.isRequired,
   }).isRequired,
 }
 
-export default About
+export default Github
