@@ -1,15 +1,17 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-
-import createHistory from 'history/createMemoryHistory'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
+import { renderDom } from './root/html'
+
+import createHistory from 'history/createMemoryHistory'
 import configureStore from 'Redux/store/configureStoreProd'
+
 import rootSaga from 'Redux/rootSaga'
 
 import AppRoot from './root'
-import { renderDom } from './root/html'
+
 
 const PROD_PORT = process.env.PROD_PORT
 

@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import createSagaMiddleware, { END } from 'redux-saga'
-import rootReducer from '../rootReducer'
+import rootReducer from 'Redux/rootReducer'
 
 
 export default function configureStore(history={}, initialState={}) {

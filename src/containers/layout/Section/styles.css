@@ -9,10 +9,6 @@
 .row{}
 .col{}
 
-.contentHolder{
-
-}
-
 .imageHolder{
   display: flex;
   justify-content: center;
