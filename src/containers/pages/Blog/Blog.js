@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import { Grid, Row } from 'react-flexbox-grid'
 
 import { Hero, List } from 'Layout'
+import Spinner from 'Components/Spinner'
 import Card from 'Components/Card'
 
 import css from './styles.css'
@@ -14,11 +15,17 @@ class Blog extends Component {
     super(props)
   }
 
+  componentWillMount() {
+    this.props.loadAllPosts()
+  }
+
   render() {
-    const { list } = this.props
+    const { isFetching, list } = this.props
+
     return (
       <main>
         <Helmet title="Blog" />
+
         <Hero className={css.hero}>
           <h1>Blog</h1>
           <p>List of blog posts</p>
@@ -26,14 +33,19 @@ class Blog extends Component {
 
         <List>
           {
-            list.map(({title, copy}) => (
-              <Card
-                key={yeast()}
-                title={title}
-                copy={copy}
-                image="http://via.placeholder.com/350x250"
-              />
-            ))
+            isFetching
+            ? <Spinner />
+            : list && list.length
+              ? list.map( ({id, title, body}) => (
+                  <Card
+                    key={yeast()}
+                    id={id}
+                    title={title}
+                    copy={body}
+                    image="http://via.placeholder.com/350x250"
+                  />
+                ) )
+              : <div>No results</div>
           }
         </List>
       </main>
@@ -43,7 +55,8 @@ class Blog extends Component {
 
 Blog.PropTypes = {
   list: PropTypes.array.isRequired,
-  loadPageData: PropTypes.func.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+  loadAllPosts: PropTypes.func.isRequired,
 }
 
 export default Blog
