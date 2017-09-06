@@ -12,3 +12,15 @@ export const getPostsAction = {
   success: (response) => actionCreator(GET_POSTS[SUCCESS], {response}),
   failure: (error) => actionCreator(GET_POSTS[FAILURE], {error}),
 }
+
+
+//// ONE POST ////
+export const LOAD_POST = 'LOAD_POST'
+export const loadPost = () => actionCreator(LOAD_POST)
+
+export const GET_POST = createRequestTypes('GET_POST')
+export const getPostAction = {
+  request: () => actionCreator(GET_POST[REQUEST]),
+  success: (response) => actionCreator(GET_POST[SUCCESS], {response}),
+  failure: (error) => actionCreator(GET_POST[FAILURE], {error}),
+}

@@ -2,7 +2,10 @@ import { take, takeLatest, put, call, fork, select, all } from 'redux-saga/effec
 import { fetchEntity } from 'Redux/rootSaga'
 import { api } from 'Redux/services'
 
-import { LOAD_ALL_POSTS, getPostsAction } from './actions'
+import {
+  LOAD_ALL_POSTS, getPostsAction,
+  LOAD_POST, getPostAction
+} from './actions'
 import { selectAllBlogs } from './selectors'
 
 
@@ -16,3 +19,14 @@ export function* loadAllPosts() {
 }
 export function* watchLoadAllPosts() { yield takeLatest(LOAD_ALL_POSTS, loadAllPosts) }
 
+
+
+// ONE POST
+const apiPost = (id) => api.callApi(`posts/`+id)
+const fetchPost = fetchEntity.bind(null, getPostAction, apiPost)
+
+export function* loadPost() {
+  const allBlogs = yield select(selectAllBlogs)
+  if(!allBlogs) yield call(fetchAllPosts)
+}
+export function* watchLoadPost() { yield takeLatest(LOAD_POST, loadPost) }
