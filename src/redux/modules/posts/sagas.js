@@ -20,13 +20,13 @@ export function* loadAllPosts() {
 export function* watchLoadAllPosts() { yield takeLatest(LOAD_ALL_POSTS, loadAllPosts) }
 
 
-
 // ONE POST
 const apiPost = (id) => api.callApi(`posts/`+id)
 const fetchPost = fetchEntity.bind(null, getPostAction, apiPost)
 
-export function* loadPost() {
-  const allBlogs = yield select(selectAllBlogs)
-  if(!allBlogs) yield call(fetchAllPosts)
+export function* watchLoadPost() {
+  while (true) {
+    const {id} = yield take(LOAD_POST)
+    yield call(fetchPost, id)
+  }
 }
-export function* watchLoadPost() { yield takeLatest(LOAD_POST, loadPost) }

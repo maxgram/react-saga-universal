@@ -33,9 +33,8 @@ class Blog extends Component {
 
         <List>
           {
-            isFetching
-            ? <Spinner />
-            : list && list.length
+            !isFetching
+            ? list && list.length
               ? list.map( ({id, title, body}) => (
                   <Card
                     key={yeast()}
@@ -46,6 +45,7 @@ class Blog extends Component {
                   />
                 ) )
               : <div>No results</div>
+            : <Spinner />
           }
         </List>
       </main>

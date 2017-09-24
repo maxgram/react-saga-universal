@@ -1,5 +1,5 @@
 import { take, takeEvery, takeLatest, put, call, fork, select, all } from 'redux-saga/effects'
-import { watchLoadAllPosts } from 'Redux/modules/posts/sagas'
+import { watchLoadAllPosts, watchLoadPost } from 'Redux/modules/posts/sagas'
 
 
 export function* fetchEntity(entity, apiFn, data) {
@@ -7,13 +7,14 @@ export function* fetchEntity(entity, apiFn, data) {
 
   const {response, error} = yield call(apiFn, data)
 
-  if(response)  yield put(entity.success(response))
-  else          yield put(entity.failure(error))
+  if(response)  yield put(entity.success(data, response))
+  else          yield put(entity.failure(data, error))
 }
 
 
 export default function* rootSaga() {
   yield all([
     fork(watchLoadAllPosts),
+    fork(watchLoadPost),
   ])
 }

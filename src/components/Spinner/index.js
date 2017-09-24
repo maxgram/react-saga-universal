@@ -1,12 +1,10 @@
-import React from 'react'
+import React, {Component} from 'react'
 import css from './styles.css'
 
-const Spinner = (props) => {
-  return (
-    <div className={css.spinner}>
-      <div>Spinner</div>
-    </div>
-  )
-}
+const Spinner = ({className=''}) => (
+  <div className={css.wrapper+' '+className}>
+    <div className={css.spinner}></div>
+  </div>
+)
 
 export default Spinner

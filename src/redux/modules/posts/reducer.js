@@ -1,24 +1,49 @@
 import { REQUEST, SUCCESS, FAILURE } from 'Redux/actions/constants'
-import { GET_POSTS } from './actions'
+import { GET_POST, GET_POSTS } from './actions'
 
 
 export function blogReducer(state={
-  isFetching: false,
-  list: null,
+  list: {
+    isFetching: false,
+    data: null
+  },
+  post: {
+    isFetching: false,
+    data: {
+      id: null,
+      title: null,
+      body: null,
+      author: null,
+    }
+  }
 }, action) {
   let reducerState = Object.assign({}, state)
+  let responseData
 
   switch(action.type){
     case GET_POSTS[REQUEST]:
-      reducerState.isFetching = true
+      reducerState.list.isFetching = true
       break
     case GET_POSTS[SUCCESS]:
-      const responseData = action.response
-      reducerState.list = responseData.data
-      reducerState.isFetching = false
+      responseData = action.response
+      reducerState.list.data = responseData.data
+      reducerState.list.isFetching = false
       break
     case GET_POSTS[FAILURE]:
-      reducerState.isFetching = false
+      reducerState.list.isFetching = false
+      break
+
+    /////////////////////////////////////////////
+    case GET_POST[REQUEST]:
+      reducerState.post.isFetching = true
+      break
+    case GET_POST[SUCCESS]:
+      responseData = action.response
+      reducerState.post.data = responseData.data
+      reducerState.post.isFetching = false
+      break
+    case GET_POST[FAILURE]:
+      reducerState.post.isFetching = false
       break
   }
 

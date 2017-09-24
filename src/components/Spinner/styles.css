@@ -1,3 +1,13 @@
-.spinner{
-
+.wrapper {
+  width: 100%;
+  text-align: center;
 }
+
+.spinner {
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  background: transparent url(/static/images/spinner.gif) no-repeat center;
+  background-size: 30px 30px;
+}
+

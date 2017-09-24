@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
+import Spinner from 'Components/Spinner'
 import { Hero, Ugc } from 'Layout'
 
 import css from './styles.css'
@@ -12,32 +13,55 @@ class BlogPost extends Component {
   }
 
   componentWillMount() {
-    this.props.loadPost()
+    const postId = this.props.match.params.id
+    this.props.loadPost(postId)
   }
 
   render() {
-    const { ugc } = this.props
+    const { isFetching, post: {title, body, author} } = this.props
+    const ugc = {__html: body || ''}
 
     return (
       <main>
-        <Helmet title="Blog Post" />
+        <Helmet title={title} />
 
         <Hero className={css.hero}>
-          <h1>Blog Post</h1>
-          <p>User generated content example</p>
+        {
+          !isFetching
+          ? <div>
+              <h1>{title}</h1>
+              <p>by {author}</p>
+            </div>
+          : <Spinner />
+        }
         </Hero>
 
-        <Ugc data={ugc} />
+        {
+          !isFetching
+          ? <Ugc data={ugc} />
+          : <Spinner />
+        }
       </main>
     )
   }
 }
 
+
 BlogPost.PropTypes = {
   loadPost: PropTypes.func.isRequired,
+  isFetching: PropTypes.bool.isRequired,
   ugc: PropTypes.shape({
-    _html: PropTypes.string.isRequired,
+    __html: PropTypes.string.isRequired,
+  }).isRequired,
+  post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
   }).isRequired,
 }
 
 export default BlogPost
+
+
+

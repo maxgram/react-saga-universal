@@ -6,8 +6,8 @@ import { loadPost } from 'Redux/modules/posts/actions'
 
 export default connect(
   state => ({
-    isFetching: state.blog.isFetching,
-    // post: state.blog.post
+    isFetching: state.blog.post.isFetching,
+    post: state.blog.post.data
   }),
   {
     loadPost
