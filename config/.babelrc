@@ -1,5 +1,5 @@
 {
-  "presets": ["react", "es2015" , "stage-2"],
+  "presets": ["react", "env" , "stage-2"],
   "plugins": [
     ["babel-plugin-webpack-alias", {"config": "${PWD}/config/aliases/index.js"}],
     "transform-decorators-legacy",
