@@ -34,7 +34,7 @@ class Home extends Component {
         >
           <div className={css.contentHolder}>
             <h2>Latest of the best</h2>
-            <p>Made of the most recent and the best tech in React world.<br /><strong>Babel 6</strong>, <strong>Webpack 3</strong>, <strong>React 15</strong>, <strong>React-Router 4</strong>, <strong>CSS-Modules</strong> are the main gears of the project. <strong>Development</strong> and <strong>Production</strong> environments for easy daily routines.</p>
+            <p>Made of the most recent and the best tech in React world.<br /><strong>Babel 6</strong>, <strong>Webpack 3</strong>, <strong>React 15</strong>, <strong>React-Router 5</strong>, <strong>CSS-Modules</strong> are the main gears of the project. <strong>Development</strong> and <strong>Production</strong> environments for easy daily routines.</p>
           </div>
         </Section>
 
