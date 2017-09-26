@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
+import ScrollTopOnMount from 'Components/ScrollTopOnMount'
 import SvgSprite from 'Components/SvgSprite'
 import { Hero, Ugc } from 'Layout'
 
@@ -17,6 +18,7 @@ class Github extends Component {
 
     return (
       <main>
+        <ScrollTopOnMount />
         <Helmet title="Github" />
 
         <Hero className={css.hero}>

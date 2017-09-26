@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
+import ScrollTopOnMount from 'Components/ScrollTopOnMount'
 import Spinner from 'Components/Spinner'
 import { Hero, Ugc } from 'Layout'
 
@@ -23,6 +24,7 @@ class BlogPost extends Component {
 
     return (
       <main>
+        <ScrollTopOnMount />
         <Helmet title={title} />
 
         <Hero className={css.hero}>

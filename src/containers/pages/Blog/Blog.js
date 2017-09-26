@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import yeast from 'yeast'
 import Helmet from 'react-helmet'
-import { Grid, Row } from 'react-flexbox-grid'
-
-import { Hero, List } from 'Layout'
+import yeast from 'yeast'
+import ScrollTopOnMount from 'Components/ScrollTopOnMount'
 import Spinner from 'Components/Spinner'
 import Card from 'Components/Card'
+import { Hero, List } from 'Layout'
 
 import css from './styles.css'
 
@@ -24,6 +23,7 @@ class Blog extends Component {
 
     return (
       <main>
+        <ScrollTopOnMount />
         <Helmet title="Blog" />
 
         <Hero className={css.hero}>
