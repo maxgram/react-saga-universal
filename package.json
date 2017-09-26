@@ -70,7 +70,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.6",
-    "react-to-top-on-mount": "0.0.1",
+    "react-to-top-on-mount": "0.0.3",
     "redux": "^3.7.2",
     "redux-devtools": "^3.4.0",
     "redux-devtools-dock-monitor": "^1.1.2",
