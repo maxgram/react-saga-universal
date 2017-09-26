@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import ToTopOnMount from 'react-to-top-on-mount'
 import yeast from 'yeast'
-import ScrollTopOnMount from 'Components/ScrollTopOnMount'
+
+import { Hero, List } from 'Layout'
 import Spinner from 'Components/Spinner'
 import Card from 'Components/Card'
-import { Hero, List } from 'Layout'
 
 import css from './styles.css'
 
@@ -23,7 +24,7 @@ class Blog extends Component {
 
     return (
       <main>
-        <ScrollTopOnMount />
+        <ToTopOnMount />
         <Helmet title="Blog" />
 
         <Hero className={css.hero}>

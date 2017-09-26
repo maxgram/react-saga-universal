@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import ToTopOnMount from 'react-to-top-on-mount'
 
-import ScrollTopOnMount from 'Components/ScrollTopOnMount'
 import { Hero, Ugc } from 'Layout'
 
 import css from './styles.css'
@@ -17,7 +17,7 @@ class About extends Component {
 
     return (
       <main>
-        <ScrollTopOnMount />
+        <ToTopOnMount />
         <Helmet title="About" />
 
         <Hero className={css.hero}>

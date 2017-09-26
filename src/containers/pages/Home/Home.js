@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import ToTopOnMount from 'react-to-top-on-mount'
 
-import ScrollTopOnMount from 'Components/ScrollTopOnMount'
-import SvgSprite from 'Components/SvgSprite'
 import { Hero, Section } from 'Layout'
+import SvgSprite from 'Components/SvgSprite'
 
 import css from './styles.css'
 
@@ -21,7 +21,7 @@ class Home extends Component {
 
     return (
       <main>
-        <ScrollTopOnMount />
+        <ToTopOnMount />
         <Helmet title="React Saga Universal" />
 
         <Hero className={css.hero}>

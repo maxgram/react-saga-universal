@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import ToTopOnMount from 'react-to-top-on-mount'
 
-import ScrollTopOnMount from 'Components/ScrollTopOnMount'
-import SvgSprite from 'Components/SvgSprite'
 import { Hero, Ugc } from 'Layout'
+import SvgSprite from 'Components/SvgSprite'
 
 import css from './styles.css'
 
@@ -18,7 +18,7 @@ class Github extends Component {
 
     return (
       <main>
-        <ScrollTopOnMount />
+        <ToTopOnMount />
         <Helmet title="Github" />
 
         <Hero className={css.hero}>
