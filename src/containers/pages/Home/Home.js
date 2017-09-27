@@ -76,7 +76,7 @@ class Home extends Component {
   }
 }
 
-Home.PropTypes = {
+Home.propTypes = {
   loadPageData: PropTypes.func.isRequired,
 }
 

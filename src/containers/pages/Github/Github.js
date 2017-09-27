@@ -33,7 +33,7 @@ class Github extends Component {
   }
 }
 
-Github.PropTypes = {
+Github.propTypes = {
   loadPageData: PropTypes.func.isRequired,
   ugc: PropTypes.shape({
     _html: PropTypes.string.isRequired,

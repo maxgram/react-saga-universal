@@ -49,7 +49,7 @@ class BlogPost extends Component {
 }
 
 
-BlogPost.PropTypes = {
+BlogPost.propTypes = {
   loadPost: PropTypes.func.isRequired,
   isFetching: PropTypes.bool.isRequired,
   ugc: PropTypes.shape({

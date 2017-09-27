@@ -7,7 +7,7 @@ const SvgSprite = ({ width=24, height=24, spriteName, className=''}) => (
   </svg>
 )
 
-SvgSprite.PropTypes = {
+SvgSprite.propTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   spriteName: PropTypes.string.isRequired,
