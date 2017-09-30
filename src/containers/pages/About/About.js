@@ -34,7 +34,7 @@ class About extends Component {
 About.propTypes = {
   loadPageData: PropTypes.func.isRequired,
   ugc: PropTypes.shape({
-    _html: PropTypes.string.isRequired,
+    _html: PropTypes.string,
   }).isRequired,
 }
 

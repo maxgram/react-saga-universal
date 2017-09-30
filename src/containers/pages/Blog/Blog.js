@@ -55,7 +55,7 @@ class Blog extends Component {
 }
 
 Blog.propTypes = {
-  list: PropTypes.array.isRequired,
+  list: PropTypes.array,
   isFetching: PropTypes.bool.isRequired,
   loadAllPosts: PropTypes.func.isRequired,
 }

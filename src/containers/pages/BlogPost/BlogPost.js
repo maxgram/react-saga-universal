@@ -52,14 +52,11 @@ class BlogPost extends Component {
 BlogPost.propTypes = {
   loadPost: PropTypes.func.isRequired,
   isFetching: PropTypes.bool.isRequired,
-  ugc: PropTypes.shape({
-    __html: PropTypes.string.isRequired,
-  }).isRequired,
   post: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    body: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
+    id: PropTypes.number,
+    title: PropTypes.string,
+    body: PropTypes.string,
+    author: PropTypes.string,
   }).isRequired,
 }
 

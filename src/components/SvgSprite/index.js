@@ -11,7 +11,7 @@ SvgSprite.propTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   spriteName: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
 }
 
 export default SvgSprite
