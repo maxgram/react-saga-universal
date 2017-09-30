@@ -1,6 +1,6 @@
 import 'react-hot-loader/patch'
 import React from 'react'
-import { render } from 'react-dom'
+import { hydrate } from 'react-dom'
 import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader'
 import { ConnectedRouter } from 'react-router-redux'
@@ -20,7 +20,7 @@ const store = configureStore(history, preloadedState)
 const domRoot = document.getElementById('root')
 
 const renderApp = () => {
-  render(
+  hydrate(
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <AppRoot />
