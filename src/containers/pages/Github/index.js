@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { counterAdd, counterRemove } from 'Redux/modules/app/actions'
 import Github from './Github'
 
 const dummy = {
@@ -13,9 +14,12 @@ const loadPageData = () => {return}
 
 export default connect(
   state => ({
-    ugc: {__html: dummy.ugc}
+    ugc: {__html: dummy.ugc},
+    counter: state.app.counter
   }),
   {
-    loadPageData
+    loadPageData,
+    counterAdd,
+    counterRemove,
   }
 )(Github)

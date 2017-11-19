@@ -14,7 +14,7 @@ class Github extends Component {
   }
 
   render() {
-    const { ugc } = this.props
+    const { ugc, counter, counterAdd, counterRemove } = this.props
 
     return (
       <main>
@@ -25,6 +25,13 @@ class Github extends Component {
           <SvgSprite spriteName="#sprite-github" className={css.heroIcon} width={52} height={52} />
           <h1>Fork me on Github</h1>
           <p>Create an issue or pull request</p>
+          <div className={css.counter}>
+            <button onClick={counterAdd}>+</button>
+            <div className={css.counterNumber}>
+              {counter}
+            </div>
+            <button onClick={counterRemove}>-</button>
+          </div>
         </Hero>
 
         <Ugc data={ugc} />
@@ -35,6 +42,7 @@ class Github extends Component {
 
 Github.propTypes = {
   loadPageData: PropTypes.func.isRequired,
+  counter: PropTypes.number.isRequired,
   ugc: PropTypes.shape({
     _html: PropTypes.string,
   }).isRequired,

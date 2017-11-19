@@ -15,3 +15,15 @@
 .heroIcon{
   fill: DARK_GREY;
 }
+
+
+.counter{
+  margin-top: 10px;
+  button, div{
+    display: inline-block;
+  }
+}
+
+.counterNumber{
+  margin: 0 10px;
+}
