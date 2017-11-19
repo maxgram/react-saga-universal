@@ -42,6 +42,8 @@ class Github extends Component {
 
 Github.propTypes = {
   loadPageData: PropTypes.func.isRequired,
+  counterAdd: PropTypes.func.isRequired,
+  counterRemove: PropTypes.func.isRequired,
   counter: PropTypes.number.isRequired,
   ugc: PropTypes.shape({
     _html: PropTypes.string,
