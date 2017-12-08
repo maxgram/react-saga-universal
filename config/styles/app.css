@@ -1,6 +1,6 @@
-@value colors: "./var/colors.css";
+@value colors: "@CSS/colors.css";
 @value RED, BLUE from colors;
-@value breakpoints: "./var/breakpoints.css";
+@value breakpoints: "@CSS/breakpoints.css";
 @value MD from breakpoints;
 
 :global {

@@ -1,6 +1,6 @@
-@value colors: "../../root/styles/var/colors.css";
+@value colors: "@CSS/colors.css";
 @value RED, DARK_GREY from colors;
-@value breakpoints: "../../root/styles/var/breakpoints.css";
+@value breakpoints: "@CSS/breakpoints.css";
 @value XS, SM, MD, LG from breakpoints;
 
 .box{

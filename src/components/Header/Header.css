@@ -1,5 +1,3 @@
-/* @value colors: "../../root/styles/var/colors.css";
-@value BLUE, BEIGE, RED, YELLOW, GREEN, DARK_GREY from colors; */
 @value HEADER_HEIGHT: 60px;
 
 .mainHeader{

@@ -1,8 +1,7 @@
-@value colors: "../../../root/styles/var/colors.css";
+@value colors: "@CSS/colors.css";
 @value BLUE, BEIGE, RED, YELLOW, GREEN, DARK_GREY from colors;
-@value breakpoints: "../../../root/styles/var/breakpoints.css";
+@value breakpoints: "@CSS/breakpoints.css";
 @value XS, SM, MD, LG from breakpoints;
-/* @value colors: "CSSVar/colors.css"; */
 
 
 .hero{

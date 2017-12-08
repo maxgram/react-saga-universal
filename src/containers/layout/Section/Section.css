@@ -1,4 +1,4 @@
-@value breakpoints: "../../../root/styles/var/breakpoints.css";
+@value breakpoints: "@CSS/breakpoints.css";
 @value XS, SM, MD, LG from breakpoints;
 
 .section{

@@ -1,4 +1,4 @@
-@value colors: "../../../root/styles/var/colors.css";
+@value colors: "@CSS/colors.css";
 @value YELLOW, DARK_GREY from colors;
 
 .hero{

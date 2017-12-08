@@ -4,7 +4,7 @@ import Routes from './routes'
 import Header from 'Components/Header'
 import Footer from 'Components/Footer'
 
-require('./styles/app.css')
+require('../../config/styles/app.css')
 
 const AppRoot = (props) => {
   return (

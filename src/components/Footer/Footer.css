@@ -1,4 +1,4 @@
-@value colors: "../../root/styles/var/colors.css";
+@value colors: "@CSS/colors.css";
 @value RED, DARK_GREY from colors;
 
 .mainFooter{
