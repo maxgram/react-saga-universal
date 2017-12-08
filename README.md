@@ -3,11 +3,11 @@ Production ready React-Redux-Saga boilerplate with Server Side Rendering support
 
 ## Tech highlights
 - Babael 6.26
-- Webpack 3.6
-- React 16
-- React-Router 5.0 (alpha)
+- Webpack 3.10
+- React 16.2
+- React-Router 4.2
 - Redux 3.7
-- Redux-saga 0.15
+- Redux-saga 0.16
 - Css-modules
 - SVG Sprotesheets
 
