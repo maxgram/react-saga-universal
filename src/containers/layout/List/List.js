@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Row } from 'react-flexbox-grid'
 
-import css from './styles.css'
+import css from './List.css'
 
 
 const List = ({children, className}) => {

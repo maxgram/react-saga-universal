@@ -8,7 +8,7 @@ import { Hero, Ugc } from 'Layout'
 import Spinner from 'Components/Spinner'
 import Pagination from 'Components/Pagination'
 
-import css from './styles.css'
+import css from './BlogPost.css'
 
 class BlogPost extends Component {
   constructor(props) {

@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import ToTopOnMount from 'react-to-top-on-mount'
 
-import css from './styles.css'
+import css from './NotFound.css'
 
 export default function NotFound() {
   return (

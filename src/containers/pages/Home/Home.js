@@ -6,7 +6,7 @@ import ToTopOnMount from 'react-to-top-on-mount'
 import { Hero, Section } from 'Layout'
 import SvgSprite from 'Components/SvgSprite'
 
-import css from './styles.css'
+import css from './Home.css'
 
 class Home extends Component {
   constructor(props) {

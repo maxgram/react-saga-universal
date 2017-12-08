@@ -8,7 +8,7 @@ import { Hero, List } from 'Layout'
 import Spinner from 'Components/Spinner'
 import Card from 'Components/Card'
 
-import css from './styles.css'
+import css from './Blog.css'
 
 class Blog extends Component {
   constructor(props) {

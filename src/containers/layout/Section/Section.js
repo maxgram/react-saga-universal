@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 
-import css from './styles.css'
+import css from './Section.css'
 
 
 const Section = ({children, image, imgLeft=false, className}) => {

@@ -6,7 +6,7 @@ import ToTopOnMount from 'react-to-top-on-mount'
 import { Hero, Ugc } from 'Layout'
 import SvgSprite from 'Components/SvgSprite'
 
-import css from './styles.css'
+import css from './Github.css'
 
 class Github extends Component {
   constructor(props) {

@@ -1,4 +1,4 @@
-export { default as Hero } from './Hero'
-export { default as Section } from './Section'
-export { default as List } from './List'
-export { default as Ugc } from './Ugc'
+export { default as Hero } from './Hero/Hero'
+export { default as Section } from './Section/Section'
+export { default as List } from './List/List'
+export { default as Ugc } from './Ugc/Ugc'
