@@ -27,6 +27,7 @@ const fetchPost = fetchEntity.bind(null, getPostAction, apiPost)
 export function* watchLoadPost() {
   while (true) {
     const {id} = yield take(LOAD_POST)
+    yield call(loadAllPosts)
     yield call(fetchPost, id)
   }
 }
