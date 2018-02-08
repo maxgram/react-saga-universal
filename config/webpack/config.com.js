@@ -39,6 +39,7 @@ const common = {
   },
 
   plugins: [
+    new webpack.EnvironmentPlugin(['NODE_ENV']),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: function (module) {
