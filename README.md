@@ -3,10 +3,10 @@ Production ready React-Redux-Saga boilerplate with Server Side Rendering support
 
 ## Tech highlights
 - Babael 6.26
-- Webpack 3.10
-- React 16.2
+- Webpack 4.8
+- React 16.3
 - React-Router 4.2
-- Redux 3.7
+- Redux 4.0
 - Redux-saga 0.16
 - Css-modules
 - SVG Sprotesheets
@@ -29,7 +29,7 @@ npm run api - starts "dev only" api server at http://localhost:3001
 
 ## Config
 ```
-cp ./config/.env.example ./config/.env
+cp .env.example .env
 ```
 
 ## Running dev

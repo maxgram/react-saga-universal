@@ -1,22 +1,19 @@
-import Express from 'express'
+import "babel-polyfill";
+import express from 'express'
 import path from 'path'
-import serverRenderer from '../../src/server.prod'
+import serverRenderer from '../../src/node'
 
-const PROD_PORT = process.env.PROD_PORT
+const PORT = process.env.PORT
 const CWD = process.cwd()
-const app = new Express()
+const app = new express()
 
+app.get('/favicon.ico', (req, res) => { res.send(204) })
 
-app.get('/favicon.ico', (req, res) => {
-  res.send(204);
-})
-
-app.use('/static', Express.static(path.resolve(CWD, './static/')))
-app.use('/dist', Express.static(path.resolve(CWD, './dist/')))
-
+app.use('/static', express.static(path.resolve(CWD, './static/')))
+app.use('/dist', express.static(path.resolve(CWD, './dist/')))
 app.use(serverRenderer)
 
-app.listen(PROD_PORT, (error) => {
-  if (error) console.error(error)
-  else console.info(`App: listening on port ${PROD_PORT}. Open up http://localhost:${PROD_PORT}/ in your browser.`)
+app.listen(PORT, (error) => {
+  if (error)  console.error(error)
+  else        console.info(`App is UP on port ${PORT}!\n`)
 })

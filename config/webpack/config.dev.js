@@ -1,22 +1,33 @@
+const version = require('../../package.json').version
 const CWD = process.cwd()
 const path = require('path')
 const webpack = require('webpack')
+const merge = require('webpack-merge')
+const common = require('./config.js')
+const PORT = process.env.PORT
 
-module.exports = {
-  devtool: 'eval-cheap-module-source-map',
+const development = {
+  mode: 'development',
+  devtool: 'inline-source-map', //'eval-cheap-module-source-map',
 
-  entry: {
-    main: [
-      'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
-      path.resolve(CWD, './src/client.dev.js')
-    ],
+  entry: [
+    'babel-polyfill',
+    `webpack-hot-middleware/client?path=http://localhost:${PORT}/__webpack_hmr&timeout=15000`,
+    path.resolve(CWD, './src/client.dev.js')
+  ],
+
+  output: {
+    publicPath: '/dist/',
   },
 
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.css$/,
-        exclude: path.resolve(CWD, './node_modules/react-flexbox-grid'),
         use: [
           'style-loader',
           {
@@ -39,12 +50,8 @@ module.exports = {
           }
         ]
       },
-      //
     ]
   },
-
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-  ],
 }
+
+module.exports = merge(development, common)
