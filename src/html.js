@@ -1,6 +1,12 @@
-export const renderDom = (html, devPort, domain, initialState=null, head) => {
+const version = require('../package.json').version
+
+export const renderDom = (html, initialState=null, head=null) => {
   const bundleCSS = initialState !== null || process.env.NODE_ENV === 'production'
-    ? `<link rel="stylesheet" type="text/css" href="http://${domain}:${devPort}/dist/bundle.css"></style>` : ''
+    ? `
+      <link rel="stylesheet" type="text/css" href="/dist/vendor-${version}.css"></style>
+      <link rel="stylesheet" type="text/css" href="/dist/bundle-${version}.css"></style>
+      `
+    : ''
 
   return `
     <!doctype html>
@@ -23,8 +29,8 @@ export const renderDom = (html, devPort, domain, initialState=null, head) => {
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState || {})};
         </script>
-        <script src="/dist/vendor.js"></script>
-        <script src="/dist/main.js"></script>
+        <script src="/dist/vendor-${version}.js"></script>
+        <script src="/dist/index-${version}.js"></script>
       </body>
     </html>
   `

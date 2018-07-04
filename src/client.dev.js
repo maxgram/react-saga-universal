@@ -1,9 +1,9 @@
-import 'react-hot-loader/patch'
-import React from 'react'
+// import 'react-hot-loader/patch'
+// import { AppContainer } from 'react-hot-loader'
+import React, { Fragment } from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
+import { Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { AppContainer } from 'react-hot-loader'
-import { ConnectedRouter } from 'react-router-redux'
 
 import { store, history } from 'Redux/store/store.dev'
 
@@ -18,27 +18,24 @@ const domRoot = document.getElementById('root')
 
 const renderApp = () => {
   render(
-    <AppContainer>
       <Provider store={store}>
-        <div>
-          <ConnectedRouter history={history}>
+        <Fragment>
+          <Router history={history}>
             <AppRoot />
-          </ConnectedRouter>
+          </Router>
           <DevTools />
-        </div>
+        </Fragment>
       </Provider>
-    </AppContainer>,
-    domRoot
+    , domRoot
   )
 }
 
-
-if (module.hot) {
+if(module.hot) {
   module.hot.accept()
   setImmediate(() => {
     unmountComponentAtNode(domRoot)
     renderApp()
   })
+} else {
+  renderApp()
 }
-
-renderApp()
