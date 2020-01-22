@@ -2,7 +2,7 @@
 Production ready React-Redux-Saga boilerplate with Server Side Rendering support.
 
 ## Tech highlights
-- Babael 6.26
+- Babel 6.26
 - Webpack 4.8
 - React 16.3
 - React-Router 4.2
@@ -33,7 +33,7 @@ cp .env.example .env
 ```
 
 ## Running dev
-Run simultaniusly (Each command in new terminal)
+Run each command in new terminal simultaneously
 ```
 npm run api
 npm start
